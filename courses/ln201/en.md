@@ -1,30 +1,30 @@
 ---
-name: Theoretical Introduction to the Lightning Network
-goal: Discovering the Lightning Network from a technical perspective
+name: Theoretical Introduction to Lightning Network
+goal: Discovering Lightning Network from a technical perspective
 objectives:
   - Understanding the functioning of the network's channels.
   - Becoming familiar with terms such as HTLC, LNURL, and UTXO.
   - Assimilating the management of liquidity and fees in LNN.
-  - Recognizing the Lightning Network as a network.
-  - Understanding the theoretical uses of the Lightning Network.
+  - Recognizing Lightning Network as a network.
+  - Understanding the theoretical uses of Lightning Network.
 ---
 
 # A Journey to Bitcoin's Second Layer
 
-This course is a theoretical lesson on the technical functioning of the Lightning Network.
+This course is a theoretical lesson on the technical functioning of Lightning Network.
 
-Welcome to the exciting world of the Lightning Network, a second layer of Bitcoin that is both sophisticated and full of potential. We are about to dive into the technical depths of this technology, without focusing on specific tutorials or usage scenarios. To get the most out of this course, a solid understanding of Bitcoin is essential. This is an experience that requires a serious and focused approach. You may also consider taking the LN 202 course in parallel, which offers a more practical aspect to this exploration. Get ready to embark on a journey that could change your perception of the Bitcoin ecosystem.
+Welcome to the exciting world of Lightning Network, a second layer of Bitcoin that is both sophisticated and full of potential. We are about to dive into the technical depths of this technology, without focusing on specific tutorials or usage scenarios. To get the most out of this course, a solid understanding of Bitcoin is essential. This is an experience that requires a serious and focused approach. You may also consider taking the LN 202 course in parallel, which offers a more practical aspect to this exploration. Get ready to embark on a journey that could change your perception of the Bitcoin ecosystem.
 
 Enjoy the discovery!
 
 +++
 
 # The Fundamentals
-## Understanding the Lightning Network
+## Understanding Lightning Network
 
-![Understanding the Lightning Network](https://youtu.be/PszWk046x-I)
+![Understanding Lightning Network](https://youtu.be/PszWk046x-I)
 
-The Lightning Network is a second-layer payment infrastructure built on the Bitcoin network that enables fast and low-cost transactions. To fully understand how the Lightning Network works, it is essential to understand what payment channels are and how they work.
+Lightning Network is a second-layer payment infrastructure built on the Bitcoin network that enables fast and low-cost transactions. To fully understand how Lightning Network works, it is essential to understand what payment channels are and how they work.
 
 A Lightning payment channel is a kind of "private lane" between two users that allows for fast and repetitive Bitcoin transactions. When a channel is opened, it is given a fixed capacity, which is defined in advance by the users. This capacity represents the maximum amount of Bitcoin that can be transmitted in the channel at any given time.
 
@@ -72,7 +72,7 @@ Now, Bob wants to send 80,000 SAT to Alice. Not having the liquidity, he cannot.
 
 ![bitcoin, addresses, utxo and transactions](https://youtu.be/cadCJ2V7zTg)
 
-In this second chapter, we take the time to study how Bitcoin transactions actually work, which will be very useful for understanding Lightning. We also briefly discuss the concept of multi-signature addresses, which is crucial for understanding the next chapter on opening channels on the Lightning Network.
+In this second chapter, we take the time to study how Bitcoin transactions actually work, which will be very useful for understanding Lightning. We also briefly discuss the concept of multi-signature addresses, which is crucial for understanding the next chapter on opening channels on Lightning Network.
 
 - Private key > Public key > Address: During a transaction, Alice sends money to Bob. The latter provides an address given by his public key. Alice, who herself received the money on an address via her public key, now uses her private key to sign the transaction and thus unlock the bitcoins from the address.
 - In a Bitcoin transaction, all bitcoins must move. Named UTXO (Unspend Transaction Output), the bits of bitcoin will all leave only to return to the owner afterwards.
@@ -105,7 +105,7 @@ In Lightning Network, multi-signatures are used. Therefore, 2 signatures are req
 
 Now, we will take a closer look at channel opening and how it is done through a Bitcoin transaction.
 
-The Lightning Network has different levels of communication:
+Lightning Network has different levels of communication:
 
 - P2P communication (Lightning Network protocol)
 - Payment channel (Lightning Network protocol)
@@ -150,7 +150,7 @@ Alice can now recover the funds alone, as she already has Bob's signature. She p
 ![cover](assets/chapitre4/1.JPG)
 
 
-Now let's analyze what really happens behind the scenes when transferring funds from one side to the other of a channel on the Lightning Network, with the notion of commitment transaction. The on-chain withdrawal/closure transaction represents the state of the channel, guaranteeing who owns the funds after each transfer. So after a Lightning Network transfer, there is an update of this transaction/contract not executed between the two peers, Alice and Bob, who create the same transaction with the current channel state in case of closure:
+Now let's analyze what really happens behind the scenes when transferring funds from one side to the other of a channel on Lightning Network, with the notion of commitment transaction. The on-chain withdrawal/closure transaction represents the state of the channel, guaranteeing who owns the funds after each transfer. So after a Lightning Network transfer, there is an update of this transaction/contract not executed between the two peers, Alice and Bob, who create the same transaction with the current channel state in case of closure:
 
 - Alice opens a channel with Bob with 130,000 SAT on her side. The withdrawal transaction accepted by both in case of closure states that 130,000 SAT will go to Alice at closure, and Bob agrees because it's fair.
 
@@ -204,7 +204,7 @@ Similarly, Bob will provide his secret to Alice. So that if he tries to cheat, A
 
 ![instruction](assets/Chapitre5/3.JPG)
 
-The person who creates the transaction with the Timelock (the one who sends the money) can only use the revocation key after the Timelock. However, the person who receives the money can use it before the Timelock in case of cheating from one side to the other of a channel on the Lightning Network. In particular, we detail the mechanisms that allow us to guard against possible cheating by one's peer within the channel.
+The person who creates the transaction with the Timelock (the one who sends the money) can only use the revocation key after the Timelock. However, the person who receives the money can use it before the Timelock in case of cheating from one side to the other of a channel on Lightning Network. In particular, we detail the mechanisms that allow us to guard against possible cheating by one's peer within the channel.
 
 ## Channel Closure
 
@@ -244,7 +244,7 @@ Alice tries to cheat by publishing an old commitment transaction. But Bob monito
 
 ![instruction](assets/chapitre6/5.JPG)
 
-In conclusion, channel closure in the Lightning Network is a crucial step that can take various forms. In a cooperative closure, both parties communicate and agree on a final state of the channel. This is the fastest and least expensive option. On the other hand, a forced closure occurs when one party is non-responsive. This is a more expensive and longer situation due to unpredictable transaction fees and the activation of the Timelock. Finally, if a participant tries to cheat by publishing an old commitment transaction, the cheater, they can be punished by losing all the SAT from the channel. It is therefore crucial to understand these mechanisms for effective and fair use of the Lightning Network.
+In conclusion, channel closure in Lightning Network is a crucial step that can take various forms. In a cooperative closure, both parties communicate and agree on a final state of the channel. This is the fastest and least expensive option. On the other hand, a forced closure occurs when one party is non-responsive. This is a more expensive and longer situation due to unpredictable transaction fees and the activation of the Timelock. Finally, if a participant tries to cheat by publishing an old commitment transaction, the cheater, they can be punished by losing all the SAT from the channel. It is therefore crucial to understand these mechanisms for effective and fair use of Lightning Network.
 
 # A liquidity network
 ## Lightning Network
@@ -321,7 +321,7 @@ Alice paid a 9.04 SAT fee and Bob received 40,000 SAT.
 
 ![cover](assets/Chapitre7/7.JPG)
 
-In the Lightning Network, it is Alice's node that decides the route before sending the payment. Therefore, there is a search for the best route and Alice is the only one who knows the route and the price. The payment is sent, but Susie has no information.
+In Lightning Network, it is Alice's node that decides the route before sending the payment. Therefore, there is a search for the best route and Alice is the only one who knows the route and the price. The payment is sent, but Susie has no information.
 
 ![cover](assets/Chapitre7/9.JPG)
 
@@ -374,12 +374,12 @@ Once the payment is made (expiration or execution), the channel state changes an
 In the case of cooperative closure: we stop payments and therefore wait for the execution of transfers/HTCL, the transaction is light so less expensive because there are a maximum of 1 or 2 outputs.
 If forced closure: we publish with all the HTLCs in progress, so it becomes very heavy and very expensive. And it's a mess.
 
-In summary, the Lightning Network routing system uses Hash Time-Locked Contracts (HTLC) to ensure secure and verifiable payment. HTLCs allow conditional payments where money can only be unlocked with a secret, thus ensuring that participants fulfill their commitments.
+In summary, Lightning Network routing system uses Hash Time-Locked Contracts (HTLC) to ensure secure and verifiable payment. HTLCs allow conditional payments where money can only be unlocked with a secret, thus ensuring that participants fulfill their commitments.
 In the example presented, Alice wants to send SAT to Bob through Susie. Bob generates a secret, creates a hash of it, and transmits it to Alice. Alice and Susie set up an HTLC based on this hash. Once Bob unlocks Susie's HTLC by showing her the secret, Susie can then unlock Alice's HTLC.
 In the event that Bob does not reveal the secret within a certain period of time, the HTLC expires. Expiration occurs in reverse order, ensuring that if Bob comes back online, there are no undesirable consequences.
 
 When closing the channel, if it is a cooperative closure, payments are interrupted and HTLCs are resolved, which is generally less expensive. If the closure is forced, all ongoing HTLC transactions are published, which can become very expensive and messy.
-In summary, the HTLC mechanism adds an additional layer of security to the Lightning Network, ensuring that payments are executed correctly and that users fulfill their commitments.
+In summary, the HTLC mechanism adds an additional layer of security to Lightning Network, ensuring that payments are executed correctly and that users fulfill their commitments.
 
 ## Finding your way
 
@@ -443,11 +443,11 @@ Another element would be the private channels (therefore not published on the ne
 
 ![graph](assets/chapitre9/3.JPG)
 
-In conclusion, routing transactions on the Lightning Network is a complex process that requires consideration of various factors. While the total capacity of channels is public, the precise distribution of liquidity is not directly accessible. This forces nodes to estimate the most likely successful routes, taking into account criteria such as fees, HTLC expiration time, the number of intermediate nodes, and a randomness factor. When multiple routes are possible, nodes seek to minimize fees and maximize the chances of success by choosing channels with sufficient liquidity and a minimum number of hops. If a transaction attempt fails due to insufficient liquidity, another route is tried until a successful transaction is made.
+In conclusion, routing transactions on Lightning Network is a complex process that requires consideration of various factors. While the total capacity of channels is public, the precise distribution of liquidity is not directly accessible. This forces nodes to estimate the most likely successful routes, taking into account criteria such as fees, HTLC expiration time, the number of intermediate nodes, and a randomness factor. When multiple routes are possible, nodes seek to minimize fees and maximize the chances of success by choosing channels with sufficient liquidity and a minimum number of hops. If a transaction attempt fails due to insufficient liquidity, another route is tried until a successful transaction is made.
 
-Furthermore, to facilitate route searching, the recipient can provide additional information such as the address, amount, preimage hash, and indications on their channels. This can help identify channels with sufficient liquidity and avoid unnecessary transaction attempts. Ultimately, the Lightning Network routing system is designed to optimize the speed, security, and efficiency of transactions while preserving user privacy.
+Furthermore, to facilitate route searching, the recipient can provide additional information such as the address, amount, preimage hash, and indications on their channels. This can help identify channels with sufficient liquidity and avoid unnecessary transaction attempts. Ultimately, Lightning Network routing system is designed to optimize the speed, security, and efficiency of transactions while preserving user privacy.
 
-# Tools of the Lightning Network
+# Tools of Lightning Network
 ## Invoice, LNURL, Keysend
 
 ![invoice, LNURL, Keysend](https://youtu.be/CHnXJuZTarU)
@@ -474,7 +474,7 @@ lnbc1m1pskuawzpp5qeuuva2txazy5g483tuv9pznn9ft8l5e49s5dndj2pqq0ptyn8msdqqcqzpgxqr
 - 1 = amount
 - M = milli (10*-3 / u = micro 10*-6 / n = nano 10*-9 / p = pico 10*-12'
   Here 1m = 1 \* 0.0001btc = 100,000 BTC
-  "Please pay 100,000 SAT on the Lightning network of the Bitcoin mainnet to pskuawzpp5qeuuva2txazy5g483tuv9pznn9ft8l5e49s5dndj2pqq0ptyn8msdqqcqzpgxqrrsssp5v4s00u579atm0em6eqm9nr7d0vr64z5j2sm5s33x3r9m4lgfdueq9qyyssqxkjzzgx5ef7ez3dks0laxayx4grrw7j22ppgzyhpydtv6hmc39skf9hjxn5yd3kvv7zpjdxd2s7crcnemh2fz26mnr6zu83w0a2fwxcqnvujl3"
+  "Please pay 100,000 SAT on Lightning network of the Bitcoin mainnet to pskuawzpp5qeuuva2txazy5g483tuv9pznn9ft8l5e49s5dndj2pqq0ptyn8msdqqcqzpgxqrrsssp5v4s00u579atm0em6eqm9nr7d0vr64z5j2sm5s33x3r9m4lgfdueq9qyyssqxkjzzgx5ef7ez3dks0laxayx4grrw7j22ppgzyhpydtv6hmc39skf9hjxn5yd3kvv7zpjdxd2s7crcnemh2fz26mnr6zu83w0a2fwxcqnvujl3"
 
 ### Timestamp (when it was created)
 
@@ -496,7 +496,7 @@ A Keysend allows Alice to send money to Bob without having Bob's request. Alice 
 
 ![cover](assets/chapitre10/3.JPG)
 
-In conclusion, a Lightning Network invoice, although complex at first glance, effectively encodes a payment request. Each section of the invoice contains key information, including the amount to be paid, the recipient, the creation timestamp, and potentially other information such as the hash of the preimage, the payment secret, routing hints, and expiration time. Protocols such as LNURL and Keysend offer significant improvements in terms of flexibility and user experience, allowing, for example, to send funds without prior request from the other party. These technologies make the payment process smoother and more efficient on the Lightning Network.
+In conclusion, a Lightning Network invoice, although complex at first glance, effectively encodes a payment request. Each section of the invoice contains key information, including the amount to be paid, the recipient, the creation timestamp, and potentially other information such as the hash of the preimage, the payment secret, routing hints, and expiration time. Protocols such as LNURL and Keysend offer significant improvements in terms of flexibility and user experience, allowing, for example, to send funds without prior request from the other party. These technologies make the payment process smoother and more efficient on Lightning Network.
 
 ## Managing Liquidity
 
@@ -540,16 +540,16 @@ The most complicated thing in LN is to keep liquidity.
 
 ![instruction](assets/chapitre11/5.JPG)
 
-In conclusion, liquidity management on the Lightning Network is a key issue that depends on the type of user: buyer, merchant, or routing node. Buyers, who need outgoing liquidity, have the simplest task: they simply open channels. Merchants, who require incoming liquidity, must be connected to other nodes and actors. Routing nodes, on the other hand, seek to maintain a balance of liquidity on both sides. Several solutions exist for managing liquidity, such as purchasing channels or paying to increase receiving capacity. The "Loop Out" option, allowing for an Atomic Swap between LN and BTC, offers an interesting solution for rebalancing liquidity. Despite these strategies, maintaining liquidity on the Lightning Network remains a complex challenge.
+In conclusion, liquidity management on Lightning Network is a key issue that depends on the type of user: buyer, merchant, or routing node. Buyers, who need outgoing liquidity, have the simplest task: they simply open channels. Merchants, who require incoming liquidity, must be connected to other nodes and actors. Routing nodes, on the other hand, seek to maintain a balance of liquidity on both sides. Several solutions exist for managing liquidity, such as purchasing channels or paying to increase receiving capacity. The "Loop Out" option, allowing for an Atomic Swap between LN and BTC, offers an interesting solution for rebalancing liquidity. Despite these strategies, maintaining liquidity on Lightning Network remains a complex challenge.
 
 # Go further
 ## Summary of the course
 
 ![conclusion](https://youtu.be/MaWpD0rbkVo)
 
-Our goal was to explain how the Lightning Network works and how it relies on Bitcoin to function.
+Our goal was to explain how Lightning Network works and how it relies on Bitcoin to function.
 
-The Lightning Network is a network of payment channels. We have seen how a payment channel works between two stakeholders, but we have also expanded our vision to the entire network, to the notion of a network of payment channels.
+Lightning Network is a network of payment channels. We have seen how a payment channel works between two stakeholders, but we have also expanded our vision to the entire network, to the notion of a network of payment channels.
 
 ![instruction](assets/chapitre12/0.JPG)
 
@@ -561,11 +561,11 @@ Pairs protect themselves from cheating with revocation keys and a time lock. Mut
 
 ![instruction](assets/chapitre12/3.JPG)
 
-Payments can borrow channels from other intermediate nodes. Conditional payments on the hash time lock (HTLC) allow funds to be locked until the payment is fully resolved. Onion routing is used in the Lightning Network. Intermediate nodes do not know the final destination of payments. Alice must calculate the payment route, but does not have all the information about liquidity in intermediate channels.
+Payments can borrow channels from other intermediate nodes. Conditional payments on the hash time lock (HTLC) allow funds to be locked until the payment is fully resolved. Onion routing is used in Lightning Network. Intermediate nodes do not know the final destination of payments. Alice must calculate the payment route, but does not have all the information about liquidity in intermediate channels.
 
 ![instruction](assets/chapitre12/4.JPG)
 
-There is a probability component when sending a payment via the Lightning Network.
+There is a probability component when sending a payment via Lightning Network.
 
 ![instruction](assets/chapitre12/5.JPG)
 
@@ -578,13 +578,13 @@ To receive payments, liquidity must be managed in the channels, which can be don
 
 Here is a summary of the interview:
 
-The Lightning Network is an ultra-fast payment solution on Bitcoin that allows bypassing the limitations related to the network's scalability. However, bitcoins on Lightning are not as secure as those on the Bitcoin chain because decentralization and security are prioritized over scalability.
+Lightning Network is an ultra-fast payment solution on Bitcoin that allows bypassing the limitations related to the network's scalability. However, bitcoins on Lightning are not as secure as those on the Bitcoin chain because decentralization and security are prioritized over scalability.
 
-Excessive block size increase is not a good solution as it compromises nodes and data capacity. Instead, the Lightning Network allows creating payment channels between two Bitcoin users without showing transactions on the blockchain, saving space on blocks and allowing Bitcoin to scale today.
+Excessive block size increase is not a good solution as it compromises nodes and data capacity. Instead, Lightning Network allows creating payment channels between two Bitcoin users without showing transactions on the blockchain, saving space on blocks and allowing Bitcoin to scale today.
 
-However, there are criticisms regarding the scalability and centralization of the Lightning Network, with potential issues related to channel closure and high transaction fees. To solve these problems, it is recommended to avoid opening small channels to avoid future problems and to increase transaction fees with Child Pay for Parent.
+However, there are criticisms regarding the scalability and centralization of Lightning Network, with potential issues related to channel closure and high transaction fees. To solve these problems, it is recommended to avoid opening small channels to avoid future problems and to increase transaction fees with Child Pay for Parent.
 
-Solutions considered for the future of the Lightning Network are batching and creating channels in groups to reduce transaction fees, as well as increasing block size in the long term. However, it is important to note that bitcoins on Lightning are not as secure as bitcoins on the Bitcoin chain.
+Solutions considered for the future of Lightning Network are batching and creating channels in groups to reduce transaction fees, as well as increasing block size in the long term. However, it is important to note that bitcoins on Lightning are not as secure as bitcoins on the Bitcoin chain.
 
 Privacy on Bitcoin and Lightning are linked, with onion routing ensuring a certain level of privacy for transactions. However, on Bitcoin, everything is transparent by default, with heuristics used to track Bitcoins from address to address on the Bitcoin chain.
 
@@ -594,22 +594,22 @@ To improve privacy, joint actions and coinjoins allow breaking probability calcu
 
 On Lightning, only two people are aware of the transaction, and it is more confidential than Bitcoin. Onion routing means that an intermediate node does not know the sender and recipient of the payment.
 
-To use the Lightning Network, it is recommended to follow a training on your YouTube channel or directly on the discover Bitcoin website, or to use the training on Umbrell. It is also possible to send arbitrary text during a payment on Lightning using a dedicated field for this, which can be useful for donations or messaging.
-However, it is important to note that Lightning routing nodes could be regulated in the future, with some states attempting to regulate routing nodes. For merchants, it is necessary to manage liquidity to accept payments on the Lightning Network, with current constraints that can be overcome with appropriate solutions.
+To use Lightning Network, it is recommended to follow a training on your YouTube channel or directly on the discover Bitcoin website, or to use the training on Umbrell. It is also possible to send arbitrary text during a payment on Lightning using a dedicated field for this, which can be useful for donations or messaging.
+However, it is important to note that Lightning routing nodes could be regulated in the future, with some states attempting to regulate routing nodes. For merchants, it is necessary to manage liquidity to accept payments on Lightning Network, with current constraints that can be overcome with appropriate solutions.
 
 Finally, the future of Bitcoin is promising with a possible projection of one million in five years. To ensure the professionalization of the industry and the creation of an alternative system to the existing banking system, it is important to contribute to the network and stop trusting.
 
 ## Acknowledgments and keep digging the rabbit hole
 
 Congratulations! 🎉
-You have completed the LN 201 training - Introduction to the Lightning Network!
+You have completed the LN 201 training - Introduction to Lightning Network!
 You can be proud of yourself because it's not easy. Know that few people go as deep into the Bitcoin rabbit hole.
 
 First of all, a big thank you to Fanis Makalakis for offering us this great free course on a more ethnic aspect of Lightning. Don't hesitate to follow him on Twitter, on his blog, or through his work at LN market.
 
 Then, if you want to help the project, don't hesitate to sponsor us on Patreon. Your donations will be used to produce content for new training courses and of course, you will be the first to be informed (including for Fanis' next one which is in the works!).
 
-The Lightning Network adventure continues with the Umbrel training and the implementation of a Lightning Network node. Theory is over and it's time for practice with the LN 202 training now!
+Lightning Network adventure continues with the Umbrel training and the implementation of a Lightning Network node. Theory is over and it's time for practice with the LN 202 training now!
 
 Kisses and see you soon!
 
