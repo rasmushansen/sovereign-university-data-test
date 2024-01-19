@@ -29,6 +29,11 @@ You don't need any specific knowledge to get started, the course is accessible t
 
 Bitcoin is a significant innovation that goes beyond a simple "internet currency". It is a revolution both in technology and in money, capable of questioning our relationship with currency and society. Bitcoin is a so-called **neutral** and **decentralized** currency, which means that it is not controlled by any entity or institution. It is a significant innovation that goes beyond a mere currency. In order to understand this famous bitcoin, it is important to understand that bitcoin (referred to as BTC) is both a computer protocol (Bitcoin) and a monetary unit (bitcoin).
 
+TEST, Link to 3 tutorial wallets : 
+
+[Breez](/tutorials/wallet/breez).
+[Electrum](/tutorials/wallet/electrum).
+[Coldcard](/tutorials/wallet/coldcard).
 The protocol uses underlying technologies such as cryptography, network communication, and the famous "blockchain", while the bitcoin unit is the currency necessary for the proper functioning of this same protocol. In everyday life, Salvadorans or bitcoiners around the world use bitcoin currency to buy and sell goods and services, with the currency relying on the Bitcoin protocol to function.
 
 ### A comprehensive yet accessible curriculum
